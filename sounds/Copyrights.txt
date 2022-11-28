@@ -1,0 +1,5 @@
+bg_music: credit to: Author: bart (Bart Kelsey) mit link: http://opengameart.org/users/bart
+Musik geändert
+
+Attribution Instructions: 
+Place this in your game or application in the about or credits screen : XXXXX (score name) written and produced by Ove Melaa (Omsofware@hotmail.com) Or Additional samples by Ove Melaa (Omsofware@hotmail.com) -2013 Ove Melaa

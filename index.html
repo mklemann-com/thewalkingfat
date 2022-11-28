@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale: 0.5" />
+		<title>The Walking Fat</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/Spiel.js"></script>
+		<script type="text/javascript" src="js/Spieler.js"></script>
+		<script type="text/javascript" src="js/StrassenFeld.js"></script>
+		<script type="text/javascript" src="js/BauFeld.js"></script>
+		<script type="text/javascript" src="js/Turm.js"></script>
+		<script type="text/javascript" src="js/Gegner.js"></script>
+		<script type="text/javascript" src="js/Projektil.js"></script>
+		<script type="text/javascript" src="js/Deko.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<img src="img/logo.png" />
+			</header>
+			<main class="clearfix">
+				<canvas width="1280px" height="960px" id="canvas">Dein Browser unterstützt das Canvas-Element leider nicht.</canvas>
+				<div id="interface">
+					<div class="clearfix">
+						<div id="header">
+							<h2>Menü</h2>
+						</div>
+						<div id="status">
+							<div id="wave">
+								<p>Welle: <span id="value">0</span></p>
+							</div>
+							<div id="hp">
+								<img id="leben1" src="img/herz.png" />
+								<img id="leben2" src="img/herz.png" />
+								<img id="leben3" src="img/herz.png" />
+							</div>
+							<div id="money">
+								<img src="img/gold.png" />
+								<span>x<span id="value"/>200</span></span>
+							</div>
+						</div>
+						<div id="controls">
+							<button type="button" onclick="spiel.muteMusic()"><img id="music-img" src="img/eighthnote.png" /></button>
+							<button type="button" onclick="spiel.muteSound()"><img id="sound-img" src="img/raise.png" /></button>
+						</div>
+					</div>
+					<div id="towers">
+						<div class="tower clearfix">
+							<h3>Würstchenbude</h3>
+							<img src="img/3.png" />
+							<ul>
+								<li>Normaler Schaden</li>
+								<li>Geringer Schaden</li>
+								<li>Sehr große Reichweite</li>
+								<li><img src="img/gold.png" /> x<span id="preis0">0</span></li>
+							</ul>
+						</div>
+						<div class="tower clearfix">
+							<h3>Tacobude</h3>
+							<img src="img/5.png" />
+							<ul>
+								<li>Schaden über Zeit</li>
+								<li>Mittlerer Schaden</li>
+								<li>Geringe Reichweite</li>
+								<li><img src="img/gold.png" /> x<span id="preis1">0</span></li>
+							</ul>
+						</div>
+						<div class="tower clearfix">
+							<h3>Eiswagen</h3>
+							<img src="img/6.png" />
+							<ul>
+								<li>Verlangsamung</li>
+								<li>Geringer Schaden</li>
+								<li>Geringe Reichweite</li>
+								<li><img src="img/gold.png" /> x<span id="preis2">0</span></li>
+							</ul>
+						</div>
+						<div class="tower clearfix">
+							<h3>Burgerbude</h3>
+							<img src="img/7.png" />
+							<ul>
+								<li>Flächenschaden</li>
+								<li>Hoher Schaden</li>
+								<li>Mittlere Reichweite</li>
+								<li><img src="img/gold.png" /> x<span id="preis4">0</span></li>
+							</ul>
+						</div>
+						<div class="tower clearfix">
+							<h3>Pizzabude</h3>
+							<img src="img/4.png" />
+							<ul>
+								<li>Kritischer Schaden</li>
+								<li>Sehr hoher Schaden</li>
+								<li>Große Reichweite</li>
+								<li><img src="img/gold.png" /> x<span id="preis3">0</span></li>
+							</ul>
+						</div>
+						<div class="tower clearfix">
+							<h3>Towerupgrade</h3>
+							<img src="img/upgrade.png" />
+							<ul>
+								<li>erhöht Spezialeffekte</li>
+								<li>verdoppelt Schaden</li>
+								<li>vergrößert Feuerrate</li>
+								<li><img src="img/gold.png" /> siehe UP</li>
+							</ul>
+						</div>
+					</div>
+					<div id="fps">???FPS</div>
+					<button id="wave-button" type="button" onclick="spiel.erstelleWelle()">Nächste Welle starten</button>
+				</div>
+				<div id="end-screen">
+					<div id="lose">
+						<p>Du hast verloren!</p>
+						<button type="button" onclick="reloadLevel()">Level neu starten</button>
+					</div>
+					<div id="lvl-end">
+						<p>Du hast das Level überstanden</p>
+						!<button type="button" onclick="nextLevel()">Nächstes Level starten</button>
+					</div>
+					<div id="game-end">
+						<p>Du hast gewonnen!</p>
+						<button type="button" onclick="newGame()">Neues Spiel starten</button>
+					</div>
+				</div>
+			</main>
+			<footer>
+				<p>Diese Seite entstand im Rahmen des Projektes '2D und 3D Browsergames' an der Hochschule Osnabrück.</p>
+				<p><a target="_blank" href="http://www.hs-osnabrueck.de/impressum.html">Impressum</a> - <a target="_blank" href="sounds/Copyrights.txt">Anmerkung zur Musik</a> - <a target="_blank" href="http://www.flaticon.com">Icons made by Freepik from www.flaticon.com</a> - The Walking Fat Crew © 2014</p>
+			</footer>
+		</div>
+		<div id="build-menu">
+			<img height="40px" src="img/3.png" onclick="spiel.baueTurm(0, feldX, feldY)"/>
+			<img height="40px" src="img/5.png" onclick="spiel.baueTurm(1, feldX, feldY)"/>
+			<img height="40px" src="img/6.png" onclick="spiel.baueTurm(2, feldX, feldY)"/>
+			<img height="40px" src="img/7.png" onclick="spiel.baueTurm(4, feldX, feldY)"/>
+			<img height="40px" src="img/4.png" onclick="spiel.baueTurm(3, feldX, feldY)"/>
+		</div>
+		<div id="demolish-menu">
+			<img height="40px" src="img/upgrade.png" onclick="spiel.update(feldX, feldY)">
+			<img height="40px" src="img/abriss.png" onclick="spiel.reisseAb(feldX, feldY)"/>
+		</div>
+	</body>
+</html>

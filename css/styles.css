@@ -1,0 +1,234 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+@font-face {
+    font-family: 'bat_countryregular';
+    src: url('bat-country.eot');
+    src: url('bat-country.eot?#iefix') format('embedded-opentype'),
+         url('bat-country.woff2') format('woff2'),
+         url('bat-country.woff') format('woff'),
+         url('bat-country.ttf') format('truetype'),
+         url('bat-country.svg#bat_countryregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dead_kansasregular';
+    src: url('dead_kansas.eot');
+    src: url('dead_kansas.eot?#iefix') format('embedded-opentype'),
+         url('dead_kansas.woff2') format('woff2'),
+         url('dead_kansas.woff') format('woff'),
+         url('dead_kansas.ttf') format('truetype'),
+         url('dead_kansas.svg#dead_kansasregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+
+body {
+	font-family: "Open Sans";
+	background-color: #cccccc;
+}
+
+h1,h2 {
+	text-align: center;
+}
+
+header img {
+	width: 30%;
+	margin-left: 35%;
+}
+
+#wrapper {
+	width: 1570px;
+	background-color: #eeeeee;
+}
+
+main {
+	padding: 20px;
+	overflow: hidden;
+}
+
+#canvas {
+	float: left;
+}
+
+#end-screen {
+	position: absolute;
+	width: 1530px;
+	height: 960px;
+	display: none;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#end-screen div {
+	display: none;
+	width: inherit;
+	margin: auto;
+	margin-top: 425px;
+}
+
+#end-screen p {
+	font-size: 24pt;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+#end-screen button {
+	height: 50px;
+	font-size: 14pt;
+	background: #ffffff;
+	border: none;
+	border-radius: 3px;
+}
+#end-screen button:active {
+	background: #eeeeee;
+}
+
+#interface {
+	position: relative;
+	width: 250px;
+	height: 960px;
+	float: right;
+	background-color: #e2ce87;
+	box-shadow: -2px 0 2px rgba(0, 0, 0, 0.5);
+}
+
+#interface #header {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background: #e58d45;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+#interface #status {
+	float: left;
+}
+
+#interface #controls {
+	float: right;
+	padding: 5px;
+}
+
+#interface #controls button {
+	border: none;
+	background: none;
+}
+
+#interface #wave {
+	padding: 5px;
+	font-size: 16pt;
+}
+
+#interface #hp {
+	padding: 5px;
+}
+
+#interface #hp img {
+	margin-right: 5px;
+}
+
+#interface #money {
+	padding: 5px;
+	font-size: 14pt;
+}
+
+#interface #towers {
+	height: 740px;
+	background-color: #d1bd76;
+	border-top: 2px solid #c0ac65;
+}
+
+#interface .tower {
+	padding: 5px;
+}
+
+#interface .tower img {
+	float: left;
+	margin-right: 5px;
+}
+
+#interface .tower ul {
+	display: block;
+}
+
+#interface .tower li {
+	font-size: 11pt;
+	list-style: none;
+}
+
+#interface .tower li img {
+	margin-right: 5px;
+}
+
+#interface #wave-button {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 60px;
+	padding: 10px;
+	font-size: 14pt;
+	background: #cc2c2c;
+	border: none;
+	box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.5);
+}
+
+#interface #wave-button:active {
+	background: #a00000;
+}
+
+#build-menu {
+	position: absolute;
+	display: none;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+#build-menu img {
+	margin: 5px;
+	float: left;
+}
+
+#error-note {
+	color: #ffffff;
+}
+
+#demolish-menu {
+	position: absolute;
+	display: none;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+#demolish-menu img {
+	margin: 5px;
+	float: left;
+}
+
+footer {
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 10pt;
+}
+
+footer a {
+	text-decoration: none;
+	color: #000000;
+}
